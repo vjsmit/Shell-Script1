@@ -1,2 +1,2 @@
 ls -a -l >out
-lss -a -l &>out
+lss -a -l &>>out
