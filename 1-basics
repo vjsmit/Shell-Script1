@@ -26,6 +26,9 @@
           STDOUT  1>  (default)
           STDERR  2>   
           Both STDOUT & STDERR  &>
+          To append the STDOUT  >>
+          To print on screen & Saving it to other file |tee <file_name>
+          To print, save & append                      |tee -a <file_name>
           
 (6) Mail command:
         - to see the email as well as send the email
