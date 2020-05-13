@@ -1,4 +1,4 @@
 #!/bin/bash
 echo Hell World
 
-echo -e "Hello/nWorld"
+echo -e "Hello\nWorld"
