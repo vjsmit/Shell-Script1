@@ -1,0 +1,30 @@
+/dev/null (15:00)
+
+Exit status (23:00 --)
+0-255
+
+0- Successful
+1 - 255 - Non successful
+
+We can check exit status using a variable ?      =>   echo $?
+
+man ping
+
+std error code
+1- input error
+2- command error
+Always suggested to use 1-125
+more than 125 are system used values
+
+126 - permission denied
+127 - command not found
+128 + n - to kill signals
+n - kill signal no.
+
+kill -l (36:10)
+1,2,9,15 - mostly used by admins
+
+Pipes (43:00 -)
+ - converts o/p from one cmd to i/p of other cmd
+ - com1>out =>o/p of com1
+   com2<out =>i/p for com2
