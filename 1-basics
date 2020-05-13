@@ -23,12 +23,14 @@
       - If we want to replace i/p through a file and o/p to a file, we uuse redirectors
       - STDIN < If we want to take i/p from a file instead of a command line
       - STOUT >  
-          STDOUT  1>  (default)
-          STDERR  2>   
-          Both STDOUT & STDERR  &>
-          To append the STDOUT  >>
-          To print on screen & Saving it to other file |tee <file_name>
-          To print, save & append                      |tee -a <file_name>
+          STDOUT => 1>  (default)
+          STDERR =>  2>   
+          Both STDOUT & STDERR =>  &>
+          To append the STDOUT =>  >>
+          To print on screen & Saving it to other file => |tee <file_name>
+          To print, save & append   =>                    |tee -a <file_name>
+          Redirecting o/p in out file and if any error coming then append it with out =>     >out 2>&1
+          Special location when we dont want to have o/p stored =>   >/dev/null
           
 (6) Mail command:
         - to see the email as well as send the email
