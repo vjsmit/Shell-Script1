@@ -4,3 +4,5 @@ echo Hell World
 echo -e "Hello\nWorld"
 
 echo -e "1\tName\tCourse\tyear\n2\tSmit\tShellScript\t2020"
+
+echo -e "\e[33mHelloIndia\e[0m"
