@@ -27,4 +27,7 @@
           STDERR  2>   
           Both STDOUT & STDERR  &>
           
+(6) Mail command:
+        - to see the email as well as send the email
+        
                      
