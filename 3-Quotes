@@ -1,0 +1,37 @@
+1. Normal characters:   a-z, 0-9, _
+2. rest all are special character
+
+3. echo * => Here * charcter is given to echo command by shell and not echo cmd is taking * character
+
+4. To disable speciality of special character:
+      Backslash
+      Single Quote : anything inside single quote is not treated as special character
+      Double Quote : Only these twoa re considered as special character
+                        $ - to access variables
+                        ` - to execute command
+                   : these two character speciality is negated by using \$ and \` 
+                  
+5. Filters (24:00) [-n we use to see line no.] [wc is to count no. of lines e.g. $wc -l messages]
+     Line no. => Head - n 15 [By default, head cmd will give 1st 10 line o/p]
+              => Tail -n 5   [By default, last 10 lines]
+              => If we wish to get lines in between
+                   e.g. $ cat -n \var\etc\messages | head -n 20 | tail -11   [to see o/p from line 10-20]
+                   
+     Row based => We used grep command
+                    grep word file [looking for 'word' in 'file']
+                    
+               => searching for multiple word in multiple or single file
+                    grep -e word1 root -e word2 file  [searching for word 1 & word 2 in file]
+                    grep -E 'word1|word2' passwd   [-E is extended grep] [if search character exceeds 256 then -E will not work]
+                    
+               => grep cmd is aliased with color 
+                      "grep  --color=auto"
+                      
+                    
+                    
+      /etc/passwd => File whch contain list of local user in the system 
+             
+      
+   
+
+   
