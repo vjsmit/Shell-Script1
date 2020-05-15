@@ -50,6 +50,8 @@
                => -x option: It will give only particular word as o/p no other non-sense.
                => -A 1 option: It will give the next line also after the o/p
                => -B 1 option: Before one line
+               => -v option: If we want to search for lines which dont have searched word (e.g. root, o/p will be lines which dont have root word)
+                           : mailnly used in finding empty lines and remove it (e.g. cat passwd | grep -v '^$')
                
         wc option: It will give No. of lines, no. of words, no. of characters in that file
                  : e.g. wc /tmp/passwd
