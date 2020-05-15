@@ -6,7 +6,7 @@
 4. To disable speciality of special character:
       Backslash
       Single Quote : anything inside single quote is not treated as special character
-      Double Quote : Only these twoa re considered as special character
+      Double Quote : Only these two are considered as special character
                         $ - to access variables
                         ` - to execute command
                    : these two character speciality is negated by using \$ and \` 
@@ -17,20 +17,56 @@
               => If we wish to get lines in between
                    e.g. $ cat -n \var\etc\messages | head -n 20 | tail -11   [to see o/p from line 10-20]
                    
-     Row based => We used grep command
+     Row based =>
+          We used grep command
                     grep word file [looking for 'word' in 'file']
                     
-               => searching for multiple word in multiple or single file
-                    grep -e word1 root -e word2 file  [searching for word 1 & word 2 in file]
+               => searching for multiple word in  single file
+                    grep -e word1 -e word2 file  [searching for word 1 & word 2 in file]
                     grep -E 'word1|word2' passwd   [-E is extended grep] [if search character exceeds 256 then -E will not work]
                     
                => grep cmd is aliased with color 
                       "grep  --color=auto"
                       
+               => -f (40:00 --)
+                        we give all the words which we want to search in a file e.g. search.grep
+                         then, $ grep -f search.grep passwd
+                         
+               => Searching single/mutiple word in mutiple files 
+                    grep word file_name1 file_name2   [e.g. grep root /etc/passwd /etc/group]
+                    we will get file_name1: o/p
+                                file_name2: o/p
+              
+               
+              Different options for grep cmd
+                  -e option: Searching for word in file (e.g. grep -e root -e adm /etc/passwd)
+                  -E option: Searching for word in file (e.g. grep -E 'root|adm' passwd)
+                  -f option: Create a file with words we want to search (e.g. grep -f search.grep passwd)
+                  -h option: When we dont want file_name and want only o/p then use (e.g. grep root /etc/passwd /etc/group -h)
+                  -l option: When we want to print only list of file names which contain the word (e.g. grep root /etc/passwd /etc/group -l)
+                  -c option: When we dont want to see the o/p and want just to know how many lines are there. (Instead of using wc -l cmd).
+                  -i option: to disable case sensitivity
+               => -w option: It will give complete line as o/p where the that particular word is there
+               => -x option: It will give only particular word as o/p no other non-sense.
+               => -A 1 option: It will give the next line also after the o/p
+               => -B 1 option: Before one line
+               
+        wc option: It will give No. of lines, no. of words, no. of characters in that file
+                 : e.g. wc /tmp/passwd
+        wc -l option: to give no. of lines
+        
+        sort command: to sort based on option given
+                    : -n ------ based on no.
+                    : -n -r ----sort in reverse way
+                    : | uniq ----to get unique value
+                    : | uniq -d --to print only duplicates
                     
-                    
-      /etc/passwd => File whch contain list of local user in the system 
+    
+    
+    /etc/passwd => File whch contain list of local user in the system 
              
+               
+                                
       
    
 
