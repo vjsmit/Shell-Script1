@@ -1,0 +1,47 @@
+## In a file, every line starts with ^ and end with $
+    - we can use this to search for the word using  ^. e.g. $ grep ^root /etc/passwd (o/p will be lines starting with root)
+    - we can use this to search for the word using $.  e.g. $ grep bash$ /etc/passwd (o/p will be line ending with bash)
+    - when we combine both ^$, It is called empty line.
+    
+##Filtering o/p based on column (05:30 --)
+  - Delimiter is used to delimit column to column. It can comma, colon or any other charcter
+  - field is used to determine column. e.g. f1, f2, f3
+  - cut cmd:
+        => Default delimiter is a tab space
+        =>  | cut -f 2 (it will 2nd column as o/p)
+        =>  | cut -f 1,4 (1st and 4th column)
+        =>  | cut -f 1-3 (1st to 3rd column)
+        => custom delimiter (-d option) (e.g. cat passwd | cut -d ':' -f 4 ) 
+            (Here, it will override default delimiter which is a tab space)
+        =>cut cmd use in cutting character using -c option
+            e.g. echo HelloWorld |cut -c 1,5  (o/p-->Hello)
+        => bcoz of its default delimiter of tab space, its not very useful where there is no proper spacing
+        
+  - xargs cmd (14:50 --)
+      (1) It will convert rows to column and column to rows. 
+             - xargs -n1 (converting rows to column use -n1 option, using -n2 option will give 2 columns)
+             - while converting column to rows or rows to column it uses default delimiter of single space 
+      (2) Every cmd doesnt accept std input. e.g. rm cmd doesnt accept std input
+            - xargs cmd take the input from previous cmd and will provide normal i/p to the next cmd.
+               e.g. echo err |xargs rm -f (Here, xargs cmd will take o/p of echo cmd and provide  normal i/p to rm cmd)
+             
+             
+             ####free -m | grep Mem | xargs | cut -d ' ' -f 4
+  - awk cmd (22:30 --)
+        - above we are using 3 cmds to get free memory, using awk cmd we can print it (free -m | awk '/Mem/ {print $4}')
+        - awk cmd will filter the o/p based on column or rows and even in both the ways    
+        - Here, instead of  -f we use $1, $2, $3,.....,$NF
+        - print $1 will print 1st field and $NF will print last field 
+        - awk '{print $1}'
+        - to search for particular word and print using awk we use /word/ format
+            e.g. awk '/word/ {print }' file_name
+        - Delimiter in awk cmd
+           (1) Single space
+           (2) Multiple spaces
+           (3) Tab space
+        - For custom delimiter
+            - we use -F option followed by field separator character (-F stands for field separator)
+                e.g. awk -F : '{print $1, $NF}' file_name   (it will print 1st and last column)
+                     awk -F : '/word/ {print $1}' file_name  (it will print 1st column if it contain particular word)
+      
+            
