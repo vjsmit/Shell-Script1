@@ -1,0 +1,27 @@
+sed - stream line editor
+yum config: we need to config a repo file which is in /etc/yum/repos.d
+
+sed -e 'cmd1' -e 'cmd2' -e 'cmd3' file (Here, in this case we get o/p. By default, it will not edit the file only manipulate the o/p)
+sed -i -e 'cmd1' file (Here we will nor get o/p bcoz file is directly modifying)
+-f option : when we have multiple cmd. We keep them in a file and access them using -f option
+p - Print
+d - delete
+s - substitute
+a - append
+i -insert
+c - change
+
+using -n option we can disable default behaviour of printing duplicate lines
+searching  a word we have to use word in fwd slashes. e.g. $ sed -n '/word/ p' file_name
+using -f option:
+  create a file test.sed. put all cmd in this file. e.g. /word1/ p, /word2/ p, /word3/ p
+    now, $ sed -n -f test.sed file_name
+If we want to print only 2nd line:
+  $ sed -n '2 p' file_name
+  
+If we want to print line 1 to line 4 we use comma.
+  $ sed -n '1,4 p' file_name (print line 1 to line 4)
+  $ sed -n '2,$ p' file_name  (print fom 2nd line till end)
+  $ sed -n '1~2 p' file_name  (print alternate lines)
+  $ sed -n '/jason/,4 p' file_name (searching for word jason and if found then print till line no. 4)
+  $ sed -n '/jason/,/raj/ p' file_name (search for jason and print till raj is found)
