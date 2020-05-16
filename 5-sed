@@ -20,8 +20,23 @@ If we want to print only 2nd line:
   $ sed -n '2 p' file_name
   
 If we want to print line 1 to line 4 we use comma.
+print (p)
   $ sed -n '1,4 p' file_name (print line 1 to line 4)
   $ sed -n '2,$ p' file_name  (print fom 2nd line till end)
   $ sed -n '1~2 p' file_name  (print alternate lines)
   $ sed -n '/jason/,4 p' file_name (searching for word jason and if found then print till line no. 4)
-  $ sed -n '/jason/,/raj/ p' file_name (search for jason and print till raj is found)
+  $ sed -n '/jason/,/raj/ p' file_name (search for jason and print till raj is found. If jason is not found then it will not look at all for raj)
+  $ sed -n '/jason/, +2 p' file_name (search for jason and if found then print next two lines also)
+  
+delete (d)  
+  $ sed '1,4 d' file_name (it will delete line 1 to line 4 and will print reamaining line)
+  $ sed '/manager/ d' file_name (search for word manager and delete it and print remaining line)
+  $ sed '/^$/ d' file_name 
+  $ sed -e'/^$/ d' file_name (It will remove empty line and wil print the o/p. File content will not be affected)
+  $ sed -i -e '/^$/ d' file_name (It will not print anything on screen but file content will be modified and blank space will be removed)
+  
+substitute (s)
+  $ sed 's/Manager/Director/' file_name (It will replace Manager with the Director)
+  $ sed '\Sales\s\Manager\Director\' file_name (It will search for the word Sales in this sales search for manager and replace it with director)
+     echo apple ant | sed -e 's/a/A/g' (g is used as global) o/p Apple Ant
+      echo apple ant | sed -e 's/a/A/2' (to get 2nd word) 
