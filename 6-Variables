@@ -1,0 +1,15 @@
+Variables:
+  - If we assign a name to a set of data.
+  Data:
+    Single Character 
+    Single Word
+    Single line
+    Multiple lines
+    
+ # Every cmd we execute in Linux have process ID (ps)
+ # Whenever any process id created, certain amount of mem & CPU is allocated.
+ # To undefine a variable
+   - unset Variable_Name
+   
+ $ date | md5sum (to generate new pwd everytime)
+ 
