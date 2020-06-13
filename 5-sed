@@ -56,7 +56,7 @@ append cmd
          
 insert cmd
   - using i cmd
-  - it will insert in the line unlike append
+  - it will insert in the exact line 
   
 change cmd
    -  using c cmd
