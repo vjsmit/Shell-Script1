@@ -11,8 +11,8 @@
           e.g. echo -e "Hello\nWorld"
                echo -e "Hello\tWorld"
                echo -e "\e[32mHello\e[0m"    ========> [0m is used to disable the color which we activated
-               echo -e "\e[32;42mHello\e[0m" ========> Print noth FG & BG color
-               echo -e "\e[1;33;42mHello\e[0m" ======> To print in bold
+               echo -e "\e[32;42mHello\e[0m" ========> Print both FG & BG color
+               echo -e "\e[1;33;42mHello\e[0m" ======> To print in bold with both FG & BG colors
                
       -n => to disable new line after printing
             echo -n Hello
@@ -20,7 +20,7 @@
         - to see list of colors
         
 (5) Redirectors:
-      - If we want to replace i/p through a file and o/p to a file, we uuse redirectors
+      - If we want to replace i/p through a file and o/p to a file, we use redirectors
       - STDIN < If we want to take i/p from a file instead of a command line
       - STOUT >  
           STDOUT => 1>  (default)
