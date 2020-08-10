@@ -28,3 +28,9 @@ Pipes (43:00 -)
  - converts o/p from one cmd to i/p of other cmd
  - com1>out =>o/p of com1
    com2<out =>i/p for com2
+
+
+Wall
+
+Wall command is to send messgae to everyone's terminal - It's like a broadcast message
+ - genrally used by admin to broadcast any messages
