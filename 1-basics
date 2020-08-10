@@ -27,7 +27,7 @@
           STDERR =>  2>   
           Both STDOUT & STDERR =>  &>
           To append the STDOUT =>  >>
-          To print on screen & Saving it to other file => |tee <file_name>
+          To print on screen as well as saving file => |tee <file_name>
           To print, save & append   =>                    |tee -a <file_name>
           Redirecting o/p in out file and if any error coming then append it with out =>     >out 2>&1
           Special location when we dont want to have o/p stored =>   >/dev/null
