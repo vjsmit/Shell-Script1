@@ -36,7 +36,8 @@
                     grep word file_name1 file_name2   [e.g. grep root /etc/passwd /etc/group]
                     we will get file_name1: o/p
                                 file_name2: o/p
-              
+                    to get only o/p and not file name, we use -h option
+                    to get only file name having those word use -l option
                
               Different options for grep cmd
                   -e option: Searching for word in file (e.g. grep -e root -e adm /etc/passwd)
